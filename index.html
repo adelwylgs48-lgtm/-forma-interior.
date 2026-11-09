@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FORMA — студия интерьеров. Пространства, в которых хочется жить.">
+<title>FORMA — студия интерьеров</title>
+<style>
+:root{--ink:#20231f;--muted:#777b72;--paper:#f4f2ec;--white:#fffefa;--lime:#c7e36b;--line:#dcded5;--serif:Georgia,'Times New Roman',serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}button,input,select{font:inherit}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.logo{font-size:25px;font-weight:800;letter-spacing:-1.8px}.logo span{color:#8ba83d}.nav{display:flex;gap:32px;font-size:13px;color:#55594f}.nav a:hover{color:#8ba83d}.header-cta,.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:white;border-radius:3px;padding:14px 20px;font-size:12px;letter-spacing:.04em;transition:.25s}.header-cta:hover,.btn:hover{background:#56633a;transform:translateY(-2px)}
+.hero{padding:78px 0 70px;display:grid;grid-template-columns:1.04fr .96fr;gap:54px;align-items:center}.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#7b8f42;font-weight:700;display:flex;align-items:center;gap:10px}.eyebrow:before{content:"";width:27px;height:1px;background:#8ba83d}.hero h1{font:clamp(52px,7vw,92px)/.98 var(--serif);font-weight:400;letter-spacing:-4px;margin:24px 0}.hero h1 em{color:#8ba83d;font-weight:400}.hero-copy{max-width:450px;color:var(--muted);font-size:15px;line-height:1.8}.hero-actions{display:flex;gap:20px;align-items:center;margin-top:30px}.text-link{font-size:12px;border-bottom:1px solid #a6aa9d;padding-bottom:5px}.hero-image{height:535px;position:relative;overflow:hidden;border-radius:2px;background:#d4d2c6}.hero-image img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.78)}.image-note{position:absolute;bottom:20px;left:20px;background:var(--white);padding:13px 17px;font-size:11px;letter-spacing:.06em}.image-note strong{display:block;font:19px var(--serif);margin-top:4px}
+.stats{background:var(--ink);color:white;padding:30px 0}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.stat{border-right:1px solid #4b5048;padding-left:25px}.stat:first-child{padding-left:0}.stat:last-child{border:0}.stat b{font:36px var(--serif);color:var(--lime);font-weight:400}.stat span{display:block;color:#b8bcb2;font-size:11px;margin-top:6px;letter-spacing:.05em}
+section{padding:100px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}.section-head h2{font:clamp(38px,5vw,58px)/1.05 var(--serif);font-weight:400;letter-spacing:-1.7px;margin:15px 0 0}.section-head p{max-width:350px;color:var(--muted);font-size:13px;line-height:1.7;margin:0}.services{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.service{background:var(--white);padding:30px;min-height:245px;border:1px solid #e8e7df;transition:.3s}.service:hover{transform:translateY(-6px);box-shadow:0 15px 35px #252a1710}.service .num{font:16px var(--serif);color:#91a84f}.service h3{font:25px var(--serif);font-weight:400;margin:35px 0 12px}.service p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}
+.projects{background:#e9e9df}.project-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.project{position:relative;overflow:hidden;min-height:390px;background:#c9c6b8}.project img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:transform .7s}.project:hover img{transform:scale(1.04)}.project-info{position:absolute;bottom:0;left:0;right:0;padding:25px;background:linear-gradient(transparent,#0009);color:white}.project-info small{font-size:10px;letter-spacing:.14em;text-transform:uppercase}.project-info h3{font:30px var(--serif);font-weight:400;margin:8px 0 0}.project:nth-child(2){margin-top:65px;min-height:325px}
+.process{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}.process-intro h2{font:clamp(40px,5vw,60px)/1.03 var(--serif);font-weight:400;letter-spacing:-2px;margin:18px 0}.process-intro p{color:var(--muted);font-size:13px;line-height:1.8;max-width:330px}.steps{border-top:1px solid var(--line)}.step{display:grid;grid-template-columns:48px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid var(--line)}.step-no{font:20px var(--serif);color:#8ba83d}.step h3{font:22px var(--serif);font-weight:400;margin:0 0 7px}.step p{font-size:12px;color:var(--muted);line-height:1.7;margin:0}
+.calculator{background:#20231f;color:white}.calculator-inner{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.calculator h2{font:clamp(40px,5vw,58px)/1.05 var(--serif);font-weight:400;margin:18px 0}.calculator p{color:#b9beb3;font-size:13px;line-height:1.8;max-width:420px}.calc-box{background:#2d322b;padding:30px;border:1px solid #454b40}.field{margin-bottom:24px}.field label{display:flex;justify-content:space-between;font-size:12px;color:#dce0d6;margin-bottom:12px}.field output{color:var(--lime);font-weight:700}.field input[type=range]{width:100%;accent-color:var(--lime)}.result{border-top:1px solid #51584b;padding-top:22px;display:flex;justify-content:space-between;align-items:end}.result span{font-size:11px;color:#c0c5ba}.result strong{font:36px var(--serif);color:var(--lime);font-weight:400}
+.contact{background:var(--lime);padding:75px 0}.contact-inner{display:flex;justify-content:space-between;align-items:center;gap:30px}.contact h2{font:clamp(38px,5vw,58px)/1 var(--serif);font-weight:400;margin:0 0 12px;letter-spacing:-1.5px}.contact p{font-size:13px;margin:0;color:#45502c}.contact .btn{background:var(--ink)}
+footer{padding:30px 0;background:var(--ink);color:#b8bcb2}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:11px}.footer-logo{font-size:23px;font-weight:800;color:white;letter-spacing:-1px}.footer-logo span{color:var(--lime)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:800px){.nav{display:none}.hero{grid-template-columns:1fr;padding-top:55px;gap:35px}.hero-image{height:420px}.stats-grid{grid-template-columns:repeat(2,1fr);row-gap:25px}.stat:nth-child(2){border:0}.services{grid-template-columns:1fr 1fr}.project-grid{grid-template-columns:1fr}.project:nth-child(2){margin-top:0}.process{grid-template-columns:1fr;gap:35px}.calculator-inner{grid-template-columns:1fr;gap:35px}.section-head{align-items:start;flex-direction:column}.contact-inner{align-items:flex-start;flex-direction:column}}
+@media(max-width:520px){.wrap{width:min(100% - 32px,1180px)}header{height:70px}.header-cta{padding:12px 13px;font-size:10px}.hero h1{letter-spacing:-2px}.hero-image{height:340px}section{padding:70px 0}.stats-grid{gap:20px 8px}.stat{padding-left:12px}.stat b{font-size:30px}.services{grid-template-columns:1fr}.service{min-height:205px}.project{min-height:300px}.project:nth-child(2){min-height:270px}.calc-box{padding:22px}.footer-inner{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <a class="logo" href="#">FORMA<span>.</span></a>
+  <nav class="nav"><a href="#about">О студии</a><a href="#services">Услуги</a><a href="#projects">Проекты</a><a href="#process">Процесс</a></nav>
+  <a class="header-cta" href="#contact">ОБСУДИТЬ ПРОЕКТ ↗</a>
+</header>
+<main>
+<section class="hero wrap" id="about">
+ <div class="reveal">
+  <div class="eyebrow">Студия интерьерного дизайна</div>
+  <h1>Пространство<br>для <em>вашей</em><br>жизни.</h1>
+  <p class="hero-copy">Создаём интерьеры, в которых эстетика встречается с комфортом. Продумываем каждую деталь — от первого эскиза до последней чашки на полке.</p>
+  <div class="hero-actions"><a class="btn" href="#projects">СМОТРЕТЬ ПРОЕКТЫ ↗</a><a class="text-link" href="#services">Чем мы занимаемся</a></div>
+ </div>
+ <div class="hero-image reveal"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85" alt="Светлая современная гостиная"><div class="image-note">ПРОЕКТ №024<strong>Тихая геометрия · 2025</strong></div></div>
+</section>
+<div class="stats"><div class="wrap stats-grid">
+ <div class="stat"><b>8+</b><span>ЛЕТ СОЗДАЁМ ИНТЕРЬЕРЫ</span></div><div class="stat"><b>120</b><span>РЕАЛИЗОВАННЫХ ПРОЕКТОВ</span></div><div class="stat"><b>14</b><span>ГОРОДОВ РОССИИ</span></div><div class="stat"><b>94%</b><span>КЛИЕНТОВ ПРИХОДЯТ ПО РЕКОМЕНДАЦИИ</span></div>
+</div></div>
+<section class="wrap" id="services">
+ <div class="section-head reveal"><div><div class="eyebrow">Что мы делаем</div><h2>От идеи —<br>до вашего дома.</h2></div><p>Берём на себя весь путь создания интерьера. Вам остаётся выбирать то, что нравится, и наблюдать, как пространство становится вашим.</p></div>
+ <div class="services">
+  <article class="service reveal"><div class="num">01 /</div><h3>Дизайн-проект</h3><p>Планировки, концепция, визуализации и полный комплект чертежей для реализации.</p></article>
+  <article class="service reveal"><div class="num">02 /</div><h3>Комплектация</h3><p>Подбор мебели, света, материалов и декора. Находим баланс красоты и бюджета.</p></article>
+  <article class="service reveal"><div class="num">03 /</div><h3>Авторский надзор</h3><p>Контролируем ход ремонта, взаимодействуем с подрядчиками и следим за деталями.</p></article>
+ </div>
+</section>
+<section class="projects" id="projects"><div class="wrap">
+ <div class="section-head reveal"><div><div class="eyebrow">Избранные работы</div><h2>Интерьеры с характером.</h2></div><p>Каждый проект — отражение привычек, ритма и индивидуальности людей, для которых мы его создаём.</p></div>
+ <div class="project-grid">
+  <article class="project reveal"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85" alt="Современная гостиная в натуральных оттенках"><div class="project-info"><small>КВАРТИРА · 118 М² · МОСКВА</small><h3>Тихая геометрия</h3></div></article>
+  <article class="project reveal"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85" alt="Минималистичная кухня"><div class="project-info"><small>ЗАГОРОДНЫЙ ДОМ · 210 М²</small><h3>Дом у сосен</h3></div></article>
+ </div>
+</div></section>
+<section class="wrap" id="process"><div class="process">
+ <div class="process-intro reveal"><div class="eyebrow">Понятный путь</div><h2>Хороший дизайн начинается с диалога.</h2><p>Мы выстроили процесс так, чтобы вы понимали, что происходит на каждом этапе и чувствовали себя спокойно.</p></div>
+ <div class="steps reveal">
+  <div class="step"><div class="step-no">01</div><div><h3>Знакомство</h3><p>Обсуждаем ваши задачи, образ жизни, пожелания и бюджет. Знакомимся с пространством.</p></div></div>
+  <div class="step"><div class="step-no">02</div><div><h3>Концепция</h3><p>Создаём планировку, подбираем настроение, материалы и визуальный язык будущего интерьера.</p></div></div>
+  <div class="step"><div class="step-no">03</div><div><h3>Проектирование</h3><p>Готовим визуализации и подробные чертежи, согласовываем все решения.</p></div></div>
+  <div class="step"><div class="step-no">04</div><div><h3>Реализация</h3><p>Помогаем воплотить проект в жизнь и передаём вам готовое пространство.</p></div></div>
+ </div>
+</div></section>
+<section class="calculator"><div class="wrap calculator-inner">
+ <div class="reveal"><div class="eyebrow">Планирование бюджета</div><h2>Посчитайте стоимость проекта.</h2><p>Получите предварительную оценку дизайн-проекта. Итоговая стоимость зависит от площади, состава работ и особенностей объекта.</p></div>
+ <div class="calc-box reveal">
+  <div class="field"><label for="area">Площадь помещения <output id="areaOut">80 м²</output></label><input id="area" type="range" min="30" max="250" value="80" step="5"></div>
+  <div class="field"><label for="level">Пакет услуг <output id="levelOut">Полный</output></label><input id="level" type="range" min="1" max="3" value="3" step="1"></div>
+  <div class="result"><span>ПРЕДВАРИТЕЛЬНАЯ СТОИМОСТЬ</span><strong id="total">320 000 ₽</strong></div>
+ </div>
+</div></section>
+<section class="contact" id="contact"><div class="wrap contact-inner"><div><h2>У вашего пространства<br>может быть своя история.</h2><p>Расскажите нам о ней — обсудим, каким может стать ваш интерьер.</p></div><a class="btn" href="mailto:hello@forma.studio">НАЧАТЬ ОБСУЖДЕНИЕ ↗</a></div></section>
+</main>
+<footer><div class="wrap footer-inner"><a class="footer-logo" href="#">FORMA<span>.</span></a><span>© 2025 FORMA INTERIOR STUDIO</span><span>Пространства, в которых хочется жить.</span></div></footer>
+<script>
+const area=document.getElementById('area'),level=document.getElementById('level');
+const rates={1:2500,2:3200,3:4000},names={1:'Базовый',2:'Оптимальный',3:'Полный'};
+function calc(){const a=+area.value,l=+level.value;document.getElementById('areaOut').textContent=a+' м²';document.getElementById('levelOut').textContent=names[l];document.getElementById('total').textContent=(a*rates[l]).toLocaleString('ru-RU')+' ₽'}
+area.addEventListener('input',calc);level.addEventListener('input',calc);calc();
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
